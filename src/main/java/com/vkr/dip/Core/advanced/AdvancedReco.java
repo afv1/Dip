@@ -16,6 +16,7 @@ public class AdvancedReco
 
     public AdvancedReco()
     {
+        //Запись мапы шаблонов из файла Patterns
         Map<String, String> patterns = new LinkedHashMap<>();
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("Patterns.txt"),"Patterns")))

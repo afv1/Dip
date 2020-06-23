@@ -35,7 +35,7 @@ public class DipController
 
         return core.main("fileurl");
     }
-
+    //Тестовый метод для обработки одиночных сканов
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public JSONObject link(@RequestBody JSONObject scan) throws IOException, WriterException, NotFoundException
     {
@@ -56,6 +56,7 @@ public class DipController
         return responser;
 
     }
+    //Полноценная обработка множесва сканов
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public JSONArray link1(@RequestBody JSONObject scan) throws IOException, WriterException, NotFoundException
     {
