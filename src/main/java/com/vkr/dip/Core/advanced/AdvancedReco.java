@@ -4,9 +4,9 @@ import net.sourceforge.tess4j.Tesseract;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class AdvancedReco
@@ -16,6 +16,24 @@ public class AdvancedReco
 
     public AdvancedReco()
     {
+        Map<String, String> patterns = new LinkedHashMap<>();
+
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("Patterns.txt"),"Patterns")))
+        {
+            String line;
+            String[] pp;
+
+            while ((line = br.readLine()) != null)
+            {
+                pp = br.readLine().split(":");
+                patterns.put(pp[0], pp[1]);
+            }
+            br.close();
+        } catch (Exception e)
+        {
+            System.out.println(e);
+        }
+
         //pat.put("ТОВАРНО-ТРАНСПОРТНАЯ НАКЛАДНАЯ","210,75,440,95;490,70,530,90");
         pat.put("ТОВАРНО-ТРАНСПОРТНАЯ НАКЛАДНАЯ","210,75,230,20;490,70,40,20");
     }
