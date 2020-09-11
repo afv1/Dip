@@ -1,4 +1,4 @@
-# Java test Spring service for determining the type of scanned document
--
+# Java Spring test service for determining the type of scanned document
+
 With use of Zebra Crossing and Tess4J libs
 
