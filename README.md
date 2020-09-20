@@ -2,3 +2,5 @@
 
 With use of Zebra Crossing and Tess4J libs
 
+**I will delete unused classes later (maybe)
+
